@@ -9,3 +9,11 @@
   box-sizing: border-box;
   padding: 112px 16px 16px;
 }
+
+@media (min-width: 972px) {
+  .main {
+    display: grid;
+    grid-template-columns: 1fr 652px;
+    column-gap: 48px;
+  }
+}

@@ -1,9 +1,11 @@
 import styles from "./page.module.css";
 
+import Sidebar from "@/components/Sidebar";
+
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>홈</h1>
+      <Sidebar />
     </main>
   );
 }
