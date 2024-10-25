@@ -1,0 +1,49 @@
+.aside {
+  display: block;
+  width: 100%;
+  max-width: 652px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  padding-bottom: 24px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+}
+
+.label {
+  color: var(--text-color);
+}
+
+.label:hover {
+  background-color: var(--border-color);
+}
+
+.active {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+}
+
+.item a {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+}
