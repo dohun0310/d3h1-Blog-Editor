@@ -38,8 +38,8 @@ export default function RootLayout({
     <html lang="ko" className={noto_sans_kr.className}>
       <body>
         <Header />
-        {children
-      }</body>
+        {children}
+      </body>
     </html>
   );
 }
