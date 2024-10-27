@@ -28,10 +28,10 @@ export default function useStatuses() {
     github: string,
     vercel: string,
   }>({
-    frontend: "",
-    cloudflare: "",
-    github: "",
-    vercel: "",
+    frontend: "none",
+    cloudflare: "none",
+    github: "none",
+    vercel: "none",
   });
 
   useEffect(() => {

@@ -57,3 +57,10 @@
   border-radius: 50%;
   background-color: var(--info-color);
 }
+
+.none {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--text-secondary-color);
+}
