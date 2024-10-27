@@ -30,9 +30,30 @@
   margin: 0;
 }
 
-.one {
+.operational {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(var(--color-light-green), 1);
+  background-color: var(--success-color);
+}
+
+.warning {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--warning-color);
+}
+
+.error {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--error-color);
+}
+
+.running {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--info-color);
 }
