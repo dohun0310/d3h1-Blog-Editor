@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./page.module.css";
-import useStatuses from "@/tools/status";
+import useStatuses from "@/utils/status";
 
 export default async function Home() {
   const statuses = await useStatuses();
