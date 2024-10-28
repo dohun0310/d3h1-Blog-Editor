@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-
-export async function fetchStatus(url: string) {
+async function fetchStatus(url: string) {
   const response = await fetch(url);
   const data = await response.json();
 
@@ -14,42 +12,20 @@ export async function fetchStatus(url: string) {
     return "error";
   }
 }
-  
-export async function fetchHttpStatus(url: string) {
+
+async function fetchHttpStatus(url: string) {
   const response = await fetch(url);
 
   return response.status === 200 ? "operational" : "error";
 }
 
-export default function useStatuses() {
-  const [statuses, setStatuses] = useState<{
-    frontend: string,
-    cloudflare: string,
-    github: string,
-    vercel: string,
-  }>({
-    frontend: "none",
-    cloudflare: "none",
-    github: "none",
-    vercel: "none",
-  });
-
-  useEffect(() => {
-    async function fetchAllStatuses() {
-      const frontend = await fetchHttpStatus("https://blog.d3h1.com");
-      const cloudflare = await fetchStatus("https://www.cloudflarestatus.com/api/v2/status.json");
-      const github = await fetchStatus("https://www.githubstatus.com/api/v2/status.json");
-      const vercel = await fetchStatus("https://www.vercel-status.com/api/v2/status.json");
-
-      setStatuses({
-        frontend,
-        cloudflare,
-        github,
-        vercel,
-      });
-    }
-    fetchAllStatuses();
-  }, []);
+export default async function useStatuses() {
+  const statuses = {
+    frontend: await fetchHttpStatus("https://blog.d3h1.com"),
+    cloudflare: await fetchStatus("https://www.cloudflarestatus.com/api/v2/status.json"),
+    github: await fetchStatus("https://www.githubstatus.com/api/v2/status.json"),
+    vercel: await fetchStatus("https://www.vercel-status.com/api/v2/status.json"),
+  };
 
   return statuses;
 }
