@@ -11,12 +11,28 @@ export default async function Home() {
         <p>Frontend 상태</p>
         <div className={styles[statuses.frontend]} />
       </Link>
+      <Link className={styles.status} href="https://vercel.com/dohun0310s-projects/d3h1-blog">
+        <p>Frontend 배포 상태</p>
+        <div className={styles[statuses.frontendDeploy]} />
+      </Link>
+      <Link className={styles.status} href="/">
+        <p>Editor 배포 상태</p>
+        <div className={styles.none} />
+      </Link>
       <Link className={styles.status} href="/">
         <p>Backend 상태</p>
         <div className={styles.none} />
       </Link>
       <Link className={styles.status} href="/">
-        <p>배포 상태</p>
+        <p>Database 상태</p>
+        <div className={styles.none} />
+      </Link>
+      <Link className={styles.status} href="/">
+        <p>Storage 상태</p>
+        <div className={styles.none} />
+      </Link>
+      <Link className={styles.status} href="/">
+        <p>Jenkins 상태</p>
         <div className={styles.none} />
       </Link>
       <Link className={styles.status} href="https://www.githubstatus.com">
