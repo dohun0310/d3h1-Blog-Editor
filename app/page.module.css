@@ -30,6 +30,18 @@
   margin: 0;
 }
 
+.status:hover {
+  background-color: var(--border-color);
+}
+
+@media (max-width: 150px) {
+  .status {
+    flex-direction: column;
+    gap: 0;
+    padding: 4px;
+  }
+}
+
 .operational {
   width: 10px;
   height: 10px;
