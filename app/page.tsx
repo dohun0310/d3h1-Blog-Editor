@@ -20,6 +20,14 @@ export default async function Home() {
         <div className={styles[statuses.editorDeploy]} />
       </Link>
       <Link className={styles.status} href="/">
+        <p>Server1 상태</p>
+        <div className={styles.none} />
+      </Link>
+      <Link className={styles.status} href="/">
+        <p>Server2 상태</p>
+        <div className={styles.none} />
+      </Link>
+      <Link className={styles.status} href="/">
         <p>Backend 상태</p>
         <div className={styles.none} />
       </Link>
