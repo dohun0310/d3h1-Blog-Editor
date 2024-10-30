@@ -17,7 +17,7 @@ export default async function Home() {
       </Link>
       <Link className={styles.status} href="https://vercel.com/dohun0310s-projects/d3h1-editor">
         <p>Editor 배포 상태</p>
-        <div className={styles.none} />
+        <div className={styles[statuses.editorDeploy]} />
       </Link>
       <Link className={styles.status} href="/">
         <p>Backend 상태</p>

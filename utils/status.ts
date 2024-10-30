@@ -45,7 +45,7 @@ export default async function useStatuses() {
   const statuses = {
     frontend: await fetchHttpStatus("https://blog.d3h1.com"),
     frontendDeploy: await fetchVercelDeployStatus("d3h1-blog"),
-    // backendDeploy: await fetchVercelDeployStatus("d3h1-editor"),
+    editorDeploy: await fetchVercelDeployStatus("d3h1-editor"),
     jenkins: await fetchHttpStatus(process.env.JENKINS_URL || "/"),
     cloudflare: await fetchStatus("https://www.cloudflarestatus.com/api/v2/status.json"),
     github: await fetchStatus("https://www.githubstatus.com/api/v2/status.json"),
