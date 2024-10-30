@@ -17,7 +17,7 @@ export default async function Home() {
       </Link>
       <Link className={styles.status} href="https://vercel.com/dohun0310s-projects/d3h1-editor">
         <p>Editor 배포 상태</p>
-        <div className={styles[statuses.backendDeploy]} />
+        <div className={styles.none} />
       </Link>
       <Link className={styles.status} href="/">
         <p>Backend 상태</p>
@@ -31,9 +31,9 @@ export default async function Home() {
         <p>Storage 상태</p>
         <div className={styles.none} />
       </Link>
-      <Link className={styles.status} href="/">
+      <Link className={styles.status} href={process.env.JENKINS_URL || "/"}>
         <p>Jenkins 상태</p>
-        <div className={styles.none} />
+        <div className={styles[statuses.jenkins]} />
       </Link>
       <Link className={styles.status} href="https://www.githubstatus.com">
         <p>GitHub 상태</p>
