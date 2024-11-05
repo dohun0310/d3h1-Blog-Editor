@@ -30,6 +30,10 @@ export default function Home() {
         <div className={styles.none} />
       </Link>
       <Link className={styles.status} href="/">
+        <p>Server3 상태</p>
+        <div className={styles.none} />
+      </Link>
+      <Link className={styles.status} href="/">
         <p>Backend 상태</p>
         <div className={styles.none} />
       </Link>
@@ -39,10 +43,6 @@ export default function Home() {
       </Link>
       <Link className={styles.status} href="/">
         <p>Storage 상태</p>
-        <div className={styles.none} />
-      </Link>
-      <Link className={styles.status} href="/">
-        <p>Jenkins 상태</p>
         <div className={styles.none} />
       </Link>
       <Link className={styles.status} href="https://www.cloudflarestatus.com">
