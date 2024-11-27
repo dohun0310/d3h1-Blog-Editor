@@ -23,11 +23,11 @@ export default function Home() {
       </Link>
       <Link className={styles.status} href="/">
         <p>Server1 상태</p>
-        <div className={styles.none} />
+        <div className={styles[statuses.server1]} />
       </Link>
       <Link className={styles.status} href="/">
         <p>Server2 상태</p>
-        <div className={styles.none} />
+        <div className={styles[statuses.server2]} />
       </Link>
       <Link className={styles.status} href="/">
         <p>Server3 상태</p>
