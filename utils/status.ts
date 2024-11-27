@@ -6,9 +6,12 @@ async function fetchAPIStatus(url: string): Promise<StatusType> {
     const response = await fetch(url);
     const data = await response.json();
 
-    if (data.status.indicator === "none") return "operational";
-    if (data.status.indicator === "minor") return "warning";
-    if (data.status.indicator === "major" || data.status.indicator === "critical") return "error";
+    if (data.status.indicator === "none")
+      return "operational";
+    if (data.status.indicator === "minor")
+      return "warning";
+    if (data.status.indicator === "major" || data.status.indicator === "critical")
+      return "error";
 
     return "none";
   } catch {
@@ -33,10 +36,14 @@ async function fetchVercelDeployStatus(name: string): Promise<StatusType> {
     });
     const data = await response.json();
 
-    if (data.deployments[0].state === "READY") return "operational";
-    if (data.deployments[0].state === "ERROR") return "error";
-    if (data.deployments[0].state === "CANCELED") return "warning";
-    if (data.deployments[0].state === "BUILDING") return "running";
+    if (data.deployments[0].state === "READY")
+      return "operational";
+    if (data.deployments[0].state === "ERROR")
+      return "error";
+    if (data.deployments[0].state === "CANCELED")
+      return "warning";
+    if (data.deployments[0].state === "BUILDING")
+      return "running";
 
     return "none";
   } catch {
@@ -49,6 +56,8 @@ export default function useStatuses() {
     frontend: "none",
     frontendDeploy: "none",
     editorDeploy: "none",
+    server1: "none",
+    server2: "none",
     cloudflare: "none",
     github: "none",
     vercel: "none",
@@ -72,6 +81,22 @@ export default function useStatuses() {
       setStatuses((prev) => ({ ...prev, editorDeploy }));
     };
 
+    const updateServer1Status = async () => {
+      const server1Url = process.env.NEXT_PUBLIC_SERVER1_URL;
+      if (server1Url) {
+        const server1 = await fetchHttpStatus(server1Url);
+        setStatuses((prev) => ({ ...prev, server1 }));
+      }
+    };
+
+    const updateServer2Status = async () => {
+      const server2Url = process.env.NEXT_PUBLIC_SERVER2_URL;
+      if (server2Url) {
+        const server2 = await fetchHttpStatus(server2Url);
+        setStatuses((prev) => ({ ...prev, server2 }));
+      }
+    };
+
     const updateCloudflareStatus = async () => {
       const cloudflare = await fetchAPIStatus("https://www.cloudflarestatus.com/api/v2/status.json");
       setStatuses((prev) => ({ ...prev, cloudflare }));
@@ -90,6 +115,8 @@ export default function useStatuses() {
     intervalIds.push(setInterval(updateFrontendStatus, 30000));
     intervalIds.push(setInterval(updateFrontendDeployStatus, 30000));
     intervalIds.push(setInterval(updateEditorDeployStatus, 30000));
+    intervalIds.push(setInterval(updateServer1Status, 30000));
+    intervalIds.push(setInterval(updateServer2Status, 30000));
     intervalIds.push(setInterval(updateCloudflareStatus, 30000));
     intervalIds.push(setInterval(updateGithubStatus, 30000));
     intervalIds.push(setInterval(updateVercelStatus, 30000));
@@ -97,6 +124,8 @@ export default function useStatuses() {
     updateFrontendStatus();
     updateFrontendDeployStatus();
     updateEditorDeployStatus();
+    updateServer1Status();
+    updateServer2Status();
     updateCloudflareStatus();
     updateGithubStatus();
     updateVercelStatus();
