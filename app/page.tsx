@@ -21,11 +21,11 @@ export default function Home() {
         <p>Editor 배포 상태</p>
         <div className={styles[statuses.editorDeploy]} />
       </Link>
-      <Link className={styles.status} href="/">
+      <Link className={styles.status} href={process.env.NEXT_PUBLIC_SERVER1_URL || "/"}>
         <p>Server1 상태</p>
         <div className={styles[statuses.server1]} />
       </Link>
-      <Link className={styles.status} href="/">
+      <Link className={styles.status} href={process.env.NEXT_PUBLIC_SERVER2_URL || "/"}>
         <p>Server2 상태</p>
         <div className={styles[statuses.server2]} />
       </Link>
