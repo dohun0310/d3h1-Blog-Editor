@@ -48,6 +48,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: var(--success-color);
+  transition: background-color 0.3s;
 }
 
 .warning {
@@ -55,6 +56,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: var(--warning-color);
+  transition: background-color 0.3s;
 }
 
 .error {
@@ -62,6 +64,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: var(--error-color);
+  transition: background-color 0.3s;
 }
 
 .running {
@@ -69,6 +72,7 @@
   height: 10px;
   border-radius: 50%;
   background-color: var(--info-color);
+  transition: background-color 0.3s;
 }
 
 .none {
@@ -76,4 +80,5 @@
   height: 10px;
   border-radius: 50%;
   background-color: var(--text-secondary-color);
+  transition: background-color 0.3s;
 }
