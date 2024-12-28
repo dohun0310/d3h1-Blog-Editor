@@ -1,0 +1,43 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filled {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  border: none;
+}
+
+.filled:hover {
+  background-color: var(--text-secondary-color);
+  transition: background-color 0.3s;
+}
+
+.filled svg {
+  fill: var(--background-color);
+}
+
+.linear {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.linear:hover {
+  background-color: var(--border-color);
+  transition: background-color 0.3s;
+}
+
+.linear svg {
+  fill: var(--text-color);
+}
+
+.label {
+  font-size: 14px;
+}
