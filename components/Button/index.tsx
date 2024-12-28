@@ -2,13 +2,14 @@ import styles from "./button.module.css";
 import { ButtonProps, IconProps } from "@/types/button";
 
 export default function Button({
+  className = "",
   icon,
   label,
   variant = "filled",
   onClick
 }: ButtonProps) {
   return (
-    <button className={`${styles.button} ${styles[variant]}`} onClick={onClick}>
+    <button className={`${styles.button} ${styles[variant]} ${className}`} onClick={onClick}>
       {icon && <Icon icon={icon} />}
       <span className={styles.label}>
         {label}

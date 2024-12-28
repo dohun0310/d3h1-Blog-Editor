@@ -26,6 +26,7 @@
 
 .linear {
   background-color: transparent;
+  color: var(--text-color);
   border: 1px solid var(--border-color);
 }
 
