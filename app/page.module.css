@@ -1,4 +1,4 @@
-.list {
+.main {
   margin: 0 auto;
   max-width: 652px;
   width: 100%;
@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 351px) {
-  .list {
+  .main {
     grid-template-columns: 1fr;
   }
 }

@@ -8,7 +8,7 @@ export default function Home() {
   const statuses = useStatuses();
 
   return (
-    <div className={styles.list}>
+    <div className={styles.main}>
       <Link className={styles.status} href="https://blog.d3h1.com">
         <p>Frontend 상태</p>
         <div className={styles[statuses.frontend]} />
