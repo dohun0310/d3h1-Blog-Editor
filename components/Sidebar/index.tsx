@@ -23,10 +23,13 @@ export default function Sidebar() {
   }, [subscribe]);
 
   useEffect(() => {
+    if (!visible) return;
+
     const handleClickOutside = () => hideMenu();
+
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, [hideMenu]);
+  }, [visible, hideMenu]);
 
   const getTitle = () => {
     const currentItem = menuItems.find(item => item.path === pathname);
