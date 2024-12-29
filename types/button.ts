@@ -1,6 +1,6 @@
 export interface ButtonProps {
   className?: string;
-  icon?: "add" | "edit" | "delete";
+  icon?: "add" | "delete" | "edit" | "menu";
   label?: string;
   variant?: "filled" | "linear";
   onClick: () => void;
