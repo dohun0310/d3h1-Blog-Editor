@@ -32,6 +32,12 @@ export default function Sidebar() {
   }, [visible, hideMenu]);
 
   const getTitle = () => {
+    if (pathname.startsWith("/posts")) {
+      return "게시물 관리";
+    }
+    if (pathname.startsWith("/categories")) {
+      return "카테고리 관리";
+    }
     const currentItem = menuItems.find(item => item.path === pathname);
     return currentItem ? currentItem.label : "홈";
   };
@@ -44,7 +50,7 @@ export default function Sidebar() {
       <ul className={`${styles.menu} ${visible ? styles.open : styles.hidden}`}>
         {menuItems.map(item => (
           <li className={styles.item} key={item.path}>
-            <Link className={pathname === item.path ? styles.active : styles.label} href={item.path}>
+            <Link className={pathname === item.path || (item.path !== "/" && pathname.startsWith(item.path)) ? styles.active : styles.label} href={item.path}>
               {item.label}
             </Link>
           </li>
