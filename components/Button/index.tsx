@@ -11,9 +11,7 @@ export default function Button({
   return (
     <button className={`${styles.button} ${styles[variant]} ${className}`} onClick={onClick}>
       {icon && <Icon icon={icon} />}
-      <span className={styles.label}>
-        {label}
-      </span>
+      {label && <span className={styles.label}>{label}</span>}
     </button>
   )
 }
