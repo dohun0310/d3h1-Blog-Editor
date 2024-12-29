@@ -17,7 +17,7 @@ export default function Posts() {
         <Button
           icon="add"
           label="추가하기"
-          onClick={() => null}
+          onClick={() => window.location.href = "/posts/posting"}
         />
       </div>
       <div className={styles.posts}>
