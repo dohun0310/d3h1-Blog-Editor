@@ -8,6 +8,7 @@
   
 .buttons {
   width: 100%;
+  max-width: 652px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
