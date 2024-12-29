@@ -35,9 +35,13 @@ export default function Categories() {
       </div>
       <div className={styles.categories}>
         {categories.map(category => (
-          <div className={styles.category} key={category.id}>
-            {category.name}
-          </div>
+          <Button
+            key={category.id}
+            className={styles.category}
+            label={category.name}
+            variant="linear"
+            onClick={() => null}
+          />
         ))}
       </div>
     </div>
