@@ -15,18 +15,22 @@ export const metadata: Metadata = {
   description: "d3h1 Blog 에디터",
   openGraph: {
     type: "website",
-    // url: "",
+    url: "https://editor.d3h1.com",
     title: "d3h1 Blog Editor",
     description: "d3h1 Blog 에디터",
     siteName: "d3h1 Blog Editor",
-    // images: [{}]
+    images: [{
+      url: "/opengraph.png",
+    }],
   },
   twitter: {
     card: "summary_large_image",
-    // site: "",
+    site: "https://editor.d3h1.com",
     title: "d3h1 Blog Editor",
     description: "d3h1 Blog 에디터",
-    // image: [{}]
+    images: [{
+      url: "/opengraph.png",      
+    }],
   }
 };
 
