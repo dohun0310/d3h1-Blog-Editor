@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "./sidebar.module.css";
+import { useMenuState } from "@/utils/menu";
 
 const menuItems = [
   { path: "/", label: "홈" },
@@ -12,6 +14,19 @@ const menuItems = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { isMenuVisible, subscribe, hideMenu } = useMenuState();
+  const [visible, setVisible] = useState(isMenuVisible);
+
+  useEffect(() => {
+    const unsubscribe = subscribe(setVisible);
+    return () => unsubscribe();
+  }, [subscribe]);
+
+  useEffect(() => {
+    const handleClickOutside = () => hideMenu();
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [hideMenu]);
 
   const getTitle = () => {
     const currentItem = menuItems.find(item => item.path === pathname);
@@ -23,7 +38,7 @@ export default function Sidebar() {
       <h1 className={styles.title}>
         {getTitle()}
       </h1>
-      <ul className={styles.menu}>
+      <ul className={`${styles.menu} ${visible ? styles.open : styles.hidden}`}>
         {menuItems.map(item => (
           <li className={styles.item} key={item.path}>
             <Link className={pathname === item.path ? styles.active : styles.label} href={item.path}>

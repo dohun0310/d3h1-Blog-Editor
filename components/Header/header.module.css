@@ -35,3 +35,19 @@
 .container svg path {
   fill: var(--text-color);
 }
+
+.container .menu svg {
+  min-width: 0;
+  width: 14px;
+}
+
+.container .menu svg path {
+  fill: var(--text-secondary-color);
+}
+
+@media (min-width: 972px) {
+  .container .menu {
+    display: none;
+    pointer-events: none;
+  }
+}

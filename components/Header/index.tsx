@@ -1,7 +1,13 @@
+"use client"
+
 import styles from "./header.module.css";
 import Link from "next/link";
+import Button from "@/components/Button";
+import { useMenuState } from "@/utils/menu";
 
 export default function Header() {
+  const { toggleMenu } = useMenuState();
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -13,6 +19,12 @@ export default function Header() {
             <path d="M167.991 260.977L73.6323 300H0V260.977H167.991Z"/>
           </svg>
         </Link>
+        <Button
+          className={styles.menu}
+          icon="menu"
+          variant="linear"
+          onClick={toggleMenu}
+        />
       </div>
     </header>
   )

@@ -48,3 +48,20 @@
   font-size: 14px;
   text-decoration: none;
 }
+
+@media (max-width: 972px) {
+  .open {
+    pointer-events: auto;
+    max-height: 100%;
+    transform: translateY(0);
+    transition: 0.3s;
+  }
+
+  .hidden {
+    pointer-events: none;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: 0.3s;
+  }
+}
