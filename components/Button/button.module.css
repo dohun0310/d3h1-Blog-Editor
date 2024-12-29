@@ -27,7 +27,8 @@
 .linear {
   background-color: transparent;
   color: var(--text-color);
-  border: 1px solid var(--border-color);
+  border: none;
+  box-shadow: 0 0 0 1px var(--border-color) inset;
 }
 
 .linear:hover {
