@@ -20,17 +20,17 @@ export default function Posts() {
           onClick={() => window.location.href = "/posts/posting"}
         />
       </div>
-      <div className={styles.posts}>
+      <div className={styles.list}>
         {post.map(post => (
-          <article className={styles.post} key={post.id}>
+          <div className={styles.post} key={post.id}>
             <Image src={post.teaser} alt={post.title} width={100} height={100} />
             <div className={styles.content}>
               <p className={styles.category}>{post.category}</p>
               <h1 className={styles.title}>{post.title}</h1>
               <p className={styles.description}>{post.description}</p>
             </div>
-            <div className={styles.date}>{post.date}</div>
-          </article>
+            <p className={styles.date}>{post.date}</p>
+          </div>
         ))}
       </div>
     </div>
