@@ -29,9 +29,9 @@ export default function Home() {
         <p>Server2 상태</p>
         <div className={styles[statuses.server2]} />
       </Link>
-      <Link className={styles.status} href="/">
+      <Link className={styles.status} href={process.env.NEXT_PUBLIC_SERVER3_URL || "/"}>
         <p>Server3 상태</p>
-        <div className={styles.none} />
+        <div className={styles[statuses.server3]} />
       </Link>
       <Link className={styles.status} href="/">
         <p>Backend 상태</p>

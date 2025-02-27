@@ -58,6 +58,7 @@ export default function useStatuses() {
     editorDeploy: "none",
     server1: "none",
     server2: "none",
+    server3: "none",
     cloudflare: "none",
     github: "none",
     vercel: "none",
@@ -97,6 +98,14 @@ export default function useStatuses() {
       }
     };
 
+    const updateServer3status = async () => {
+      const server3Url = process.env.NEXT_PUBLIC_SERVER3_URL;
+      if (server3Url) {
+        const server3 = await fetchHttpStatus(server3Url);
+        setStatuses((prev) => ({ ...prev, server3 }));
+      }
+    };
+
     const updateCloudflareStatus = async () => {
       const cloudflare = await fetchAPIStatus("https://www.cloudflarestatus.com/api/v2/status.json");
       setStatuses((prev) => ({ ...prev, cloudflare }));
@@ -117,6 +126,7 @@ export default function useStatuses() {
     intervalIds.push(setInterval(updateEditorDeployStatus, 30000));
     intervalIds.push(setInterval(updateServer1Status, 30000));
     intervalIds.push(setInterval(updateServer2Status, 30000));
+    intervalIds.push(setInterval(updateServer3status, 30000));
     intervalIds.push(setInterval(updateCloudflareStatus, 30000));
     intervalIds.push(setInterval(updateGithubStatus, 30000));
     intervalIds.push(setInterval(updateVercelStatus, 30000));
@@ -126,6 +136,7 @@ export default function useStatuses() {
     updateEditorDeployStatus();
     updateServer1Status();
     updateServer2Status();
+    updateServer3status();
     updateCloudflareStatus();
     updateGithubStatus();
     updateVercelStatus();
