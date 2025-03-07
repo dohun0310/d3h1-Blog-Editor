@@ -40,6 +40,22 @@
   fill: var(--text-color);
 }
 
+.icon {
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 0 0 1px var(--border-color) inset;
+  padding: 8px;
+}
+
+.icon:hover {
+  background-color: var(--border-color);
+  transition: background-color 0.3s;
+}
+
+.icon svg {
+  fill: var(--text-color);
+}
+
 .label {
   font-size: 14px;
 }
